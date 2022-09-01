@@ -21,7 +21,7 @@ public class SvaraSnalla {
             System.out.println(x);
         }
         input.next();
-        System.out.println("Nu får du fan dra här ifrån");
+        System.out.println("Nu får du dra här ifrån");
     }
 }
 
