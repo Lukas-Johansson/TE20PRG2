@@ -1,5 +1,5 @@
 import java.io.BufferedReader;
-import  java.io.FileReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class Crypt {
@@ -8,6 +8,7 @@ public class Crypt {
     String keyFilename;
     String key;
 
+    //Läsa in fil
     public String readFile(String filename)
     {
         String msg = "";
@@ -20,8 +21,7 @@ public class Crypt {
         return msg;
     }
 
-    public void crypt(String message, String key)
-    {
+    public void crypt(String message, String Key) {
         if(key == null)
         {
             key = readKey(filename);
@@ -29,12 +29,18 @@ public class Crypt {
         encrypt(message, key);
     }
 
-    public String readKey(String keyFilename) {
-        String key = "";
 
+    public String readKey(String KeyFilename) {
+        String key = "";
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(keyFilename));
+            key = br.readLine();
+        } catch (IOException e) {
+         e.printStackTrace();
+        }
+        return key;
     }
 
     private void encrypt(String message, String key) {
-
     }
 }
